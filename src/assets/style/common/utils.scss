@@ -1,0 +1,19 @@
+
+
+/* 用户是否可选中， 可选参数如下
+user-select: none; 不可选
+user-select: auto; //自动
+user-select: text; 可选文本
+user-select: contain; //允许在元素内选择；但是，选区将被限制在该元素的边界之内
+user-select: all;
+*/
+@mixin utils-user-select($value){
+    user-select: $value;   /**/ 
+}
+
+/* 超长文本省略*/
+@mixin utils-ellipsis{
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
