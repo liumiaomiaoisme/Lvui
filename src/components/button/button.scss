@@ -1,14 +1,16 @@
 @import "@/assets/style/common/baseColor.scss";
 
 .el-button{
-    display:inline-block;
+    display:inline-flex;
+    justify-content: center;
+    align-items: center;
     box-sizing: border-box;
     padding:10px 22px;
-    background-color:$-primary-color;
-    color:$-main-text-color;
-    border:1px solid $-primary-color;
-    border-radius: 4px;
+    border-radius: $-default-radius;
+    border:1px solid $-default-color;
     outline:none;
+    color:$-normal-text-color;
+    background-color: $-white;
     cursor: pointer;
     & + & {
         margin-left:10px;
@@ -16,10 +18,21 @@
     &:disabled{
         cursor: not-allowed;
     }
-    &.is-plain{
-        background-color:transparent;
-        color:$-primary-color;
+    &:focus,
+    &:hover{
+        border:1px solid $-default-hover-color;
+        background-color: $-default-hover-bgcolor;
+        color: $-primary-color;
+    }
+    &:active{
         border:1px solid $-primary-color;
+        background-color: $-default-hover-bgcolor;
+        color: $-primary-color;
+    }
+    &.is-plain:hover{
+        border:1px solid $-primary-color;
+        background-color: $-white;
+        color: $-primary-color;
     }
     &.is-round{
         border-radius: 22px;
@@ -28,5 +41,69 @@
         font-size: 12px;
         border-radius: 50%;
         padding:12px;
+    } 
+
+    
+    @each $type,$color in(
+        primary:$-primary-color,
+        success:$-success-color,
+        fail:$-fail-color,
+        warn:$-warn-color,
+        info:$-info-color
+    ){
+        &-#{$type}{
+            background-color: #{$color};
+            border:1px solid #{$color};
+            color:$-white;
+            &.is-plain{
+                background-color:mix($-white, $color, 90%);
+                color:#{$color};
+                border:1px solid mix($-white, $color, 60%);
+            }
+            &.is-plain:hover,&.is-plain:focus{
+                background-color:#{$color};
+                color:$-white;
+                border:1px solid #{$color};
+            }
+        }
     }
+
+    @each $type,$color in(
+        primary:$-primary-hover-color,
+        success:$-success-hover-color,
+        fail:$-fail-hover-color,
+        warn:$-warn-hover-color,
+        info:$-info-hover-color
+    ){
+        &-#{$type}:hover,
+        &-#{$type}:focus{
+            background-color: #{$color};
+            border:1px solid #{$color};
+            color:$-white;
+        }
+    }
+
+    @each $type,$color in(
+        primary:$-primary-active-color,
+        success:$-success-active-color,
+        fail:$-fail-active-color,
+        warn:$-warn-active-color,
+        info:$-info-active-color
+    ){
+        &-#{$type}:active{
+            background-color: #{$color};
+            border:1px solid #{$color};
+            color:$-white;
+            &.is-plain{
+                background-color: #{$color};
+                border:1px solid #{$color};
+                color:$-white;
+            }
+        }
+        
+    }
+    
+
+
+   
 }

@@ -18,7 +18,12 @@ Vue.use(VueRouter)
   {
     path: '/button',
     name: 'button',
-    component: () => import(/* webpackChunkName: "about" */ '../components/button/demo/index.vue')
+    component: () => import(/* webpackChunkName: "button" */ '../demo/button/index.vue')
+  },
+  {
+    path: '/icon',
+    name: 'icon',
+    component: () => import(/* webpackChunkName: "icon" */ '../demo/icon/index.vue')
   }
 ]
 
