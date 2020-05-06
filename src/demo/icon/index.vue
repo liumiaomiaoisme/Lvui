@@ -14,7 +14,8 @@
         <lj-icon icon='aixin'></lj-icon>
         <lj-icon icon='bijiben'></lj-icon>
         <lj-icon icon='dingyue'></lj-icon>
-        
+        <lj-icon icon='loading'></lj-icon>
+
     </div>
 </template>
 

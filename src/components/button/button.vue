@@ -14,8 +14,9 @@
           }
         ]"
       >
+        <lj-icon :icon='icon' v-if='icon' class='button-icon'></lj-icon>
         <span v-if='$slots.default'><slot></slot></span>
-        <!-- 插槽-->
+        <!-- 文字插槽-->
     </button>
 </template> 
 
@@ -33,6 +34,9 @@ export default {
         plain:Boolean,
         round:Boolean,
         circle:Boolean,
+        icon:{
+            type:String
+        }
     },
     methods: {
         // 点击事件传递回父组件，同时传递事件参数对象

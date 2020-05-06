@@ -24,7 +24,7 @@
     <lj-button type='info' round>info</lj-button>
 
     <div>------</div>
-
+    <lj-button type='primary' icon='loading'>plain</lj-button>
     <lj-button type='primary' plain>plain</lj-button>
     <lj-button type='primary' round>round</lj-button>
     <lj-button type='primary' circle>&lt;&lt;</lj-button>
