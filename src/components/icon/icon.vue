@@ -1,5 +1,5 @@
 <template>
-    <svg class="lj-icon" aria-hidden="true">
+    <svg class="lj-icon" :class="{'loading-circle':icon==='loading'}" aria-hidden="true">
         <use :xlink:href="`#icon-${icon}`"></use>
     </svg>
 </template>
@@ -20,6 +20,14 @@ export default {
     width:20px;
     height:20px;
     vertical-align:middle;
-    fill:#42b983;
+    fill:#000;
+}
+.loading-circle{
+    animation:circle 2s linear infinite;
+}
+
+@keyframes circle{
+    0%{transform:rotate(0deg)}
+    100%{transform:rotate(360deg)}
 }
 </style>
